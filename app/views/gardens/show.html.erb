@@ -1,8 +1,26 @@
+
+
+
+
+<div class="container">
+
 <h1>Gardens#show</h1>
 <p>Find me in app/views/gardens/show.html.erb</p>
 
 <%= @garden.name %>
 
-<div>
+
+   <div class="row"> <%= #@garden(image) %>  </div>
+  <div class="row">  <%= @garden.description %>  </div>
+  <div class="row">  <%= @garden.address %>  </div>
+  <div class="row">  <%= @garden.price %>  </div>
+
+  <div>
   <%= link_to "Back to list", root_path %>
 </div>
+
+
+</div>
+
+
+
