@@ -2,6 +2,26 @@
 <p>Find me in app/views/gardens/new.html.erb</p>
 
 <%= form_for @garden do |f| %>
-  <%= f.text_field :name %>
+ <div>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder:"name" %>
+  </div>
+
+  <br />
+
+  <div>
+  <%= f.label :address %>
+  <%= f.text_field :address, placeholder:"address" %>
+  </div>
+
+  <br />
+
+  <div>
+  <%= f.label :description %>
+  <%= f.text_field :description, placeholder:"description" %>
+  </div>
+
+  <br />
+
   <%= f.submit "Create", class: "btn btn-primary"%>
 <% end %>
