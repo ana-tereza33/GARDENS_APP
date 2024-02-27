@@ -1,0 +1,7 @@
+<h1>Gardens#new</h1>
+<p>Find me in app/views/gardens/new.html.erb</p>
+
+<%= form_for @garden do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create", class: "btn btn-primary"%>
+<% end %>
