@@ -32,6 +32,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_184216) do
     t.integer "size"
     t.string "address"
     t.text "description"
+    t.decimal "price_per_day"
+    t.string "photo_url"
+    t.string "latitude"
+    t.string "longitude"
+    t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_gardens_on_user_id"

@@ -20,6 +20,10 @@ class GardensController < ApplicationController
     @garden = Garden.find(params[:id])
   end
 
+  def destroy
+    @garden = Garden.find(params[:id])
+  end
+
   private
 
   def garden_params
