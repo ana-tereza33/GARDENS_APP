@@ -10,14 +10,19 @@
     </div>
   </div>
 <div>
-  <% %>%
-  <%= link_to "Delete",
-  gardendestroy_path(garden),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-</div>
-<% end %>
 
+
+<% if current_user == garden.user %>
+      <%= link_to "Delete",
+                  gardendestroy_path(garden),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
+  <br />
+<% end %>
+<div>
+  <%= link_to "New garden", new_garden_path %>
+</div>
 <br />
 
 
