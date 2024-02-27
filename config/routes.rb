@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   resources :gardens, only: [:index, :show, :new, :create, :destroy] do
     resources :bookings, only: [:new, :create, :update]
   end

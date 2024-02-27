@@ -1,9 +1,40 @@
+
+
+
+
+<div class="container">
+
 <h1>Gardens#show</h1>
-<p>Find me in app/views/gardens/show.html.erb</p>
+<%# <p>Find me in app/views/gardens/show.html.erb</p> %>
 
 <%= @garden.name %>
 
-<div>
+
+  <div class="row">
+    <div class="col-6">
+      <%= cl_image_tag @garden.image.key, alt: "#{@garden.name} Image", class: "card-garden-img" %>
+    </div>
+
+    <div class="col-6">
+      <%= cl_image_tag @garden.image.key, alt: "#{@garden.name} Image", class: "card-garden-img" %>
+    </div>
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="col-6">
+      <%= @garden.description %> </div>
+    </div>
+
+    <div class="col-6">
+      <%= @garden.price_per_day %>
+    </div>
+
+  <div class="row"> <%= @garden.address %> </div>
+
+  <div>
   <%= link_to "Back to list", root_path %>
 </div>
-
+</div>

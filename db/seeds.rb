@@ -1,9 +1,31 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Garden.destroy_all
+
+ana = User.create(email: "ana@email.com", password: "123456")
+
+Garden.create(
+  name: "Sunny Garden",
+  description: "A beautiful garden with many blooming flowers and a sunny atmosphere.",
+  image: File.open(Rails.root.join('app', 'assets', 'images', 'garden_images', 'garden1.jpg')),
+  user: ana
+)
+
+Garden.create(
+  name: "Vegetable Garden",
+  description: "A garden rich in fresh vegetables. Here, tomatoes, carrots, and much more grow.",
+  image: File.open(Rails.root.join('app', 'assets', 'images', 'garden_images', 'garden2.jpg')),
+  user: ana
+)
+
+Garden.create(
+  name: "Rose Garden",
+  description: "A romantic garden full of roses in different colors and shapes.",
+  image: File.open(Rails.root.join('app', 'assets', 'images', 'garden_images', 'garden3.jpg')),
+  user: ana
+)
+
+Garden.create(
+  name: "Japanese Garden",
+  description: "A zen-inspired garden with bonsai trees, cherry blossoms, and a pond.",
+  image: File.open(Rails.root.join('app', 'assets', 'images', 'garden_images', 'garden4.jpg')),
+  user: ana
+)
