@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get "gardens", to: "gardens#index", as: :gardens
-  post "gardens", to: "gardens#create"
-  get "gardens/new", to: "gardens#new", as: :new_garden
-  get "gardens/:id", to: "gardens#show", as: :garden
+  resources :gardens, only: [:index, :show, :new, :create]
+  delete "gardens/:id", to: "gardens#destroy", as: "gardendestroy"
 
   devise_for :users
 
