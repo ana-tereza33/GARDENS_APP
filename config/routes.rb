@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  get "gardens", to: "gardens#index", as: :gardens
+  post "gardens", to: "gardens#create"
+  get "gardens/new", to: "gardens#new", as: :new_garden
+  get "gardens/:id", to: "gardens#show", as: :garden
+
+  devise_for :users
+
+  root to: "gardens#index" # home page
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

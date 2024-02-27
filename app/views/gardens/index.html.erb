@@ -1,0 +1,15 @@
+<h1>Gardens#index</h1>
+<p>Find me in app/views/gardens/index.html.erb</p>
+
+
+<% @gardens.each do |garden| %>
+  <div>
+    <%= link_to garden.name, garden_path(garden) %>
+  </div>
+<% end %>
+
+<br />
+
+<div>
+  <%= link_to "New garden", new_garden_path %>
+</div>
