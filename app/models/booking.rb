@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  STATUS = ["peding", "accepted", "rejected"]
+  STATUS = ["pending", "accepted", "rejected"]
 
   belongs_to :user
   belongs_to :garden
