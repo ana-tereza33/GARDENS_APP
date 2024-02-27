@@ -22,13 +22,15 @@ class GardensController < ApplicationController
 
   def destroy
     @garden = Garden.find(params[:id])
+    if current_user == @garden.user
     @garden.destroy
     redirect_to gardens_path
+  end
   end
 
   private
 
   def garden_params
-    params.require(:garden).permit(:name)
+    params.require(:garden).permit(:name, :description, :address, :price_per_day)
   end
 end

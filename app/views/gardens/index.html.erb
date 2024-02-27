@@ -6,9 +6,18 @@
   <div>
     <%= link_to garden.name, garden_path(garden) %>
   </div>
+<div>
+  <% %>%
+  <%= link_to "Delete",
+  gardendestroy_path(garden),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+</div>
 <% end %>
 
 <br />
+
+
 
 <div>
   <%= link_to "New garden", new_garden_path %>
