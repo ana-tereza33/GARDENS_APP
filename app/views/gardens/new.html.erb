@@ -1,39 +1,11 @@
-<h1>Gardens#new</h1>
-<p>Find me in app/views/gardens/new.html.erb</p>
-
-<%= form_for @garden do |f| %>
- <div>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder:"name" %>
-  </div>
-
-  <br />
-
-  <div>
-  <%= f.label :address %>
-  <%= f.text_field :address, placeholder:"address" %>
-  </div>
-
-  <br />
-
-  <div>
-  <%= f.label :description %>
-  <%= f.text_field :description, placeholder:"description" %>
-  </div>
-
-  <br />
-
-  <div>
-  <%= f.label :price_per_day %>
-  <%= f.number_field :price_per_day %>
-  </div>
-
-  <br />
-
-  <div>
-+    <%= f.label :image %>
-+    <%= f.file_field :image, direct_upload: true %>
-   </div>
-
-  <%= f.submit "Create", class: "btn btn-primary"%>
-<% end %>
+<div class="container">
+<h1>Create a new Garden</h1>
+  <%= simple_form_for(@garden) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price_per_day %>
+    <%= f.input :image, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
