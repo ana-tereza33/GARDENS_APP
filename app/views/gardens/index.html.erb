@@ -10,8 +10,8 @@
       <% end %>
       <h2><%= link_to garden.name, garden_path(garden) %></h2>
       <p><%= garden.description %></p>
-      <p>User: <%= garden.user.email %></p>
-      <p>Price: $<%= garden.price %></p>
+      <p>Owner: <%= garden.user.email %></p>
+      <p>Price: €<%= garden.price %></p>
 
       <div class="card-garden-delete">
         <% if current_user == garden.user %>
@@ -25,5 +25,5 @@
 <br />
 
 <div>
-  <%= link_to "New garden", new_garden_path %>
+  <%= link_to "Add a new garden", new_garden_path %>
 </div>
