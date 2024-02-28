@@ -23,12 +23,17 @@
 
   <br />
 
-    <div>
+  <div>
   <%= f.label :price_per_day %>
   <%= f.number_field :price_per_day %>
   </div>
 
   <br />
-  
+
+  <div>
++    <%= f.label :image %>
++    <%= f.file_field :image, direct_upload: true %>
+   </div>
+
   <%= f.submit "Create", class: "btn btn-primary"%>
 <% end %>
