@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_27_151124) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_28_150800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_151124) do
     t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "long_description"
+    t.float "price"
     t.index ["user_id"], name: "index_gardens_on_user_id"
   end
 

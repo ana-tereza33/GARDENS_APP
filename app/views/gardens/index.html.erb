@@ -1,32 +1,29 @@
+
 <h1>Gardens</h1>
-<p>Take a look at our gardens below</p>
+<p>Take a look at our beautiful Schrebergärten below</p>
 
 <% @gardens.each do |garden| %>
   <div class="col-6">
     <div class="card-garden">
-      <% if garden.image.key %>
-        <%= cl_image_tag garden.image.key, alt: "#{garden.name} Image", class: "card-garden-img" %>
-          <% end %>
-        <h2><%= link_to garden.name, garden_path(garden) %></h2>
-        <p><%= garden.description %></p>
+      <% if garden.main_photo.present? %>
+        <%= cl_image_tag garden.main_photo.key, alt: "#{garden.name} Image", class: "card-garden-img" %>
+      <% end %>
+      <h2><%= link_to garden.name, garden_path(garden) %></h2>
+      <p><%= garden.description %></p>
+      <p>Owner: <%= garden.user.email %></p>
+      <p>Price: €<%= garden.price %></p>
+
+      <div class="card-garden-delete">
+        <% if current_user == garden.user %>
+          <%= link_to "Delete", garden_path(garden), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <% end %>
+      </div>
     </div>
   </div>
-
-<div>
-<% if current_user == garden.user %>
-      <%= link_to "Delete", garden_path(garden), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <% end %>
-  </div>
-  <br />
 <% end %>
 
-<div>
-  <%= link_to "New garden", new_garden_path %>
-</div>
 <br />
 
-
-
 <div>
-  <%= link_to "New garden", new_garden_path %>
+  <%= link_to "Add a new garden", new_garden_path %>
 </div>
