@@ -1,38 +1,42 @@
 <div class="container">
+  <h1> <%= @garden.name %></h1>
+  <%# <p>Find me in app/views/gardens/show.html.erb</p> %>
 
-<h1>Gardens#show</h1>
-<%# <p>Find me in app/views/gardens/show.html.erb</p> %>
-
-<%= @garden.name %>
 
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-6 image1">
       <%= cl_image_tag @garden.image.key, alt: "#{@garden.name} Image", class: "card-garden-img" %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 image2">
       <%= cl_image_tag @garden.image.key, alt: "#{@garden.name} Image", class: "card-garden-img" %>
     </div>
   </div>
 
-
-
-
   <div class="row">
-    <div class="col-6">
-      <%= @garden.description %> </div>
+    <div class="col-6 description">
+      <%= @garden.description %>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 price">
       <%= @garden.price_per_day %>
     </div>
+  </div>
 
-    <div class="row">
+  <div class="row">
+    <div class="col-12">
       <%= @garden.address %>
     </div>
+  </div>
 
   <div>
-  <%= link_to "Back to list", root_path %>
-</div>
+    <%= link_to "Back to list", root_path %>
+  </div>
+
+
+  <div style="text-align: center;">
+  <%= link_to "Book", new_garden_booking_path(@garden), class: "btn btn-primary", id: "booking-button" %>
+  </div>
+
 </div>
