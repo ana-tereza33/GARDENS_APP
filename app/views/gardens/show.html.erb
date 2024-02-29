@@ -5,11 +5,11 @@
   <div class="row">
 
     <div class="col-6">
-      <%= cl_image_tag @garden.main_photo.key, alt: "#{@garden.name} Image", class: "card-garden-img" %>
+      <%= cl_image_tag @garden.sub_photos.first.key, alt: "#{@garden.name} Image", class: "card-garden-img",crop: "fit" %>
     </div>
 
     <div class="col-6">
-      <%= cl_image_tag @garden.main_photo.key, alt: "#{@garden.name} Image", class: "card-garden-img" %>
+      <%= cl_image_tag @garden.sub_photos.last.key, alt: "#{@garden.name} Image", class: "card-garden-img", crop: "fit"  %>
 
     </div>
   </div>
@@ -19,8 +19,8 @@
       <%= @garden.description %>
     </div>
 
-    <div class="col-6 price">
-      <%= @garden.price %>
+    <div class="col-6 price d-flex justify-content-end">
+      <%= @garden.price.to_i %> $
     </div>
   </div>
 
@@ -37,6 +37,6 @@
 <% if user_signed_in? %>
   <div style="text-align: center;">
   <%= link_to "Book", new_garden_booking_path(@garden), class: "btn btn-primary", id: "booking-button" %>
-  </div> 
+  </div>
 <% end %>
 </div>
