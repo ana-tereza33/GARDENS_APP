@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>My Bookings</h1>
+
+  <% @bookings.each_slice(2) do |booking_group| %>
+    <div class="row row-margin">
+      <% booking_group.each do |booking| %>
+        <div class="col-md-6 card-garden-col">
+          <div class="card-garden border p-3">
+            <% if booking.garden.main_photo.present? %>
+              <%= cl_image_tag booking.garden.main_photo.key, alt: "#{booking.garden.name} Image", class: "card-garden-img" %>
+            <% end %>
+            <div class="card-garden-content">
+              <h2><%= link_to booking.garden.name, garden_path(booking.garden), class: "text-decoration-none text-success" %></h2>
+              <p class="mb-3"><%= booking.garden.description %></p>
+              <div class="card-garden-details">
+                <p><strong>Price:</strong> € <%= booking.garden.price %></p>
+                <p><strong>Address:</strong> <%= booking.garden.address %></p>
+                <p><strong>Start date:</strong> <%= booking.start_date %></p>
+                <p><strong>End date:</strong> <%= booking.end_date %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

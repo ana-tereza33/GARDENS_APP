@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :gardens, only: [:index, :show, :new, :create, :destroy] do
     resources :bookings, only: [:new, :create, :update]
   end
+
+  resources :bookings, only: [:index]
+
   devise_for :users
 
   root to: "gardens#index" # home page
