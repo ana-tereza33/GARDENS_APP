@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+
+  <link rel="stylesheet" href="your-existing-stylesheet.css">
+
+  <link rel="stylesheet" href="stylesheets/components/_cards.scss">
+</head>
+
 <div class="container">
   <h1>Gardens</h1>
   <p>Take a look at our beautiful Schrebergärten below:</p>
@@ -9,17 +23,17 @@
             <% if garden.main_photo.present? %>
               <%= cl_image_tag garden.main_photo.key, alt: "#{garden.name} Image", class: "card-garden-img" %>
             <% end %>
-            <div class="card-garden-content">
+            <div class="card-garden-content" style="margin-top: 10px; margin-bottom: 10px;">
               <h2><%= link_to garden.name, garden_path(garden), class: "text-decoration-none text-success" %></h2>
               <p class="mb-3"><%= garden.description %></p>
-              <div class="card-garden-details">
-                <p><strong>Price:</strong> € <%= garden.price %></p>
+              <div class="card-garden-details d-flex justify-content-between">
                 <p><strong>Address:</strong> <%= garden.address %></p>
+                <p><strong>Price:</strong> € <%= garden.price %></p>
               </div>
             </div>
-            <div class="card-garden-delete">
+            <div class="card-garden-delete d-flex justify-content-end">
               <% if current_user == garden.user %>
-                <%= link_to "Delete", garden_path(garden), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                <%= link_to "Delete", garden_path(garden), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-sm rounded text-white" %>
               <% end %>
             </div>
           </div>
