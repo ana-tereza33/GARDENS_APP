@@ -8,6 +8,6 @@
     <%= f.input :price %>
     <%= f.input :main_photo, as: :file %>
     <%= f.input :sub_photos, as: :file, input_html: { multiple: true }, label: "More Photos" %>
-    <%= f.submit %>
+    <%= f.submit "Create a garden", id: "booking-button" %>
   <% end %>
 </div>

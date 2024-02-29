@@ -1,16 +1,23 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
+
+  def index
+    @bookings = current_user.bookings
+  end
+
   def new
     @booking = Booking.new
     @garden = Garden.find(params[:garden_id]) #checar
   end
 
   def create
-    @booking = current_user.bookings.build(booking_params)
     @garden = Garden.find(params[:garden_id])
+    @booking = Booking.new(booking_params)
     @booking.garden = @garden
+    @booking.user = current_user
     @booking.status = "pending"
     @booking.save
-    redirect_to garden_path(params[:garden_id])
+    redirect_to bookings_path
   end
 
   def update
