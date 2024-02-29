@@ -47,7 +47,12 @@ picture3 = URI.open("https://philoplanta.de/wp-content/uploads/2021/02/UNADJUSTE
 # picture8 = URI.open("https://philoplanta.de/wp-content/uploads/2021/02/UNADJUSTEDNONRAW_thumb_dce3.jpg")
 # picture9 = URI.open("https://philoplanta.de/wp-content/uploads/2021/02/UNADJUSTEDNONRAW_thumb_dce3.jpg")
 
+# picture10 = URI.open("https://philoplanta.de/wp-content/uploads/2021/02/UNADJUSTEDNONRAW_thumb_dce3.jpg")
+# picture11 = URI.open("https://philoplanta.de/wp-content/uploads/2021/02/UNADJUSTEDNONRAW_thumb_dce3.jpg")
+# picture12 = URI.open("https://philoplanta.de/wp-content/uploads/2021/02/UNADJUSTEDNONRAW_thumb_dce3.jpg")
+
 ana = User.create(email: "ana@email.com", password: "123456")
+# pedro = User.create(email: "pedro@email.com", password: "123456")
 
 garden1 = Garden.new(
   name: "Sunny Garden",
