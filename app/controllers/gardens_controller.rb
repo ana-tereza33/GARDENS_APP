@@ -11,8 +11,9 @@ class GardensController < ApplicationController
   end
 
   def create
-    @garden = current_user.gardens.build(garden_params)
-    @garden.save
+    @garden = Garden.new(garden_params)
+    @garden.user = current_user
+    @garden.save!
     redirect_to gardens_path
   end
 
@@ -31,6 +32,6 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :description, :address, :price, :main_photo)
+    params.require(:garden).permit(:name, :description, :long_description, :address, :price, :main_photo)
   end
 end
