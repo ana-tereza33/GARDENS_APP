@@ -1,29 +1,36 @@
-
-<h1>Gardens</h1>
-<p>Take a look at our beautiful Schrebergärten below</p>
-
-<% @gardens.each do |garden| %>
-  <div class="col-6">
-    <div class="card-garden">
-      <% if garden.main_photo.present? %>
-        <%= cl_image_tag garden.main_photo.key, alt: "#{garden.name} Image", class: "card-garden-img" %>
+<div class="container">
+  <h1>Gardens</h1>
+  <p>Take a look at our beautiful Schrebergärten below:</p>
+  <div class="row row-margin">
+    <% @gardens.each_slice(2) do |garden_group| %>
+      <% garden_group.each do |garden| %>
+        <div class="col-md-6 card-garden-col">
+          <div class="card-garden border p-3">
+            <% if garden.main_photo.present? %>
+              <%= cl_image_tag garden.main_photo.key, alt: "#{garden.name} Image", class: "card-garden-img" %>
+            <% end %>
+            <div class="card-garden-content">
+              <h2><%= link_to garden.name, garden_path(garden), class: "text-decoration-none text-success" %></h2>
+              <p class="mb-3"><%= garden.description %></p>
+              <div class="card-garden-details">
+                <p><strong>Price:</strong> € <%= garden.price %></p>
+                <p><strong>Address:</strong> <%= garden.address %></p>
+              </div>
+            </div>
+            <div class="card-garden-delete">
+              <% if current_user == garden.user %>
+                <%= link_to "Delete", garden_path(garden), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       <% end %>
-      <h2><%= link_to garden.name, garden_path(garden) %></h2>
-      <p><%= garden.description %></p>
-      <p>Owner: <%= garden.user.email %></p>
-      <p>Price: €<%= garden.price %></p>
-
-      <div class="card-garden-delete">
-        <% if current_user == garden.user %>
-          <%= link_to "Delete", garden_path(garden), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
 
-<br />
+  <br />
 
-<div>
-  <%= link_to "Add a new garden", new_garden_path %>
+  <div class="ml-md-3">
+    <%= link_to "Add a new garden", new_garden_path, class: "btn btn-success btn-sm rounded text-white" %>
+  </div>
 </div>

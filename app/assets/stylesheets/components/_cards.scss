@@ -24,6 +24,16 @@
 //   margin: 0;
 // }
 
+// .card-garden-delete {
+//   margin-top: 10px;
+//   text-align: center;
+// }
+
+.container {
+  margin: 10px;
+  padding: 20px;
+}
+
 .card-garden {
   overflow: hidden;
   background: white;
@@ -52,4 +62,31 @@
 .card-garden-delete {
   margin-top: 10px;
   text-align: center;
+}
+
+.row-margin {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.card-garden-col {
+  padding: 0 15px;
+}
+
+.row-margin {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.card-garden-col {
+  padding: 0 15px;
+}
+
+.ml-md-3 {
+  margin-left: 1rem !important;
+}
+
+.btn-success {
+  padding: 10px 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
