@@ -55,7 +55,10 @@ garden2.save
 garden3 = Garden.new(
   name: "Rose Garden",
   description: "A romantic garden full of roses in different colors and shapes.",
-  long_description: "Immerse yourself in the romance of this exquisite rose garden. With roses of various colors and shapes, it's a perfect setting for love and tranquility.",
+  long_description: "Immerse yourself in the romance of this exquisite rose garden. With roses of various colors and shapes, it's a perfect setting for love and tranquility.
+  This enchanting sanctuary, available for rent, invites you into a realm where time slows, and nature's symphony takes center stage. As you step through the wrought iron gate,
+  a kaleidoscope of colours greets you, with vibrant blooms dancing in the breeze. In the heart of the garden, a quaint gazebo stands as a focal point, its intricate lattice work
+  adorned with trailing vines and delicate fairy lights. Here, you can host intimate gatherings or simply lose yourself in a good book while the world fades away around you.",
   user: ana,
   price: 25.00,
   address: "789 Rose Avenue, Berlin",
