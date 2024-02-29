@@ -15,28 +15,44 @@
   </div>
 
   <div class="row">
-    <div class="col-6 description">
-      <%= @garden.description %>
+    <div class="col-6">
+      <div class=" description">
+        <%= @garden.description %>
+      </div>
+      <div class=" long_description">
+        <%= @garden.long_description %>
+      </div>
     </div>
 
     <div class="col-6 price d-flex justify-content-end">
-      <%= @garden.price.to_i %> $
+      <%# <i class="fas fa-money-bill"> %>
+
+      </i> <%= @garden.price.to_i %> $
     </div>
   </div>
+
 
   <div class="row">
-    <div class="col-12">
-      <%= @garden.address %>
+
+    <div class="col-6 address">
+        <i class="fas fa-map-marker-alt"></i> <%= @garden.address %>
+    </div>
+
+    <div class="col-6 d-flex justify-content-end">
+      <% if user_signed_in? %>
+        <div style="">
+        <%= link_to "Book", new_garden_booking_path(@garden), class: "btn btn-primary", id: "booking-button" %>
+        </div>
+      <% end %>
+
     </div>
   </div>
 
-  <div>
-    <%= link_to "Back to list", root_path %>
-  </div>
+<div>
+  <%= link_to root_path, class: "link-custom" do %>
+    <i class="fas fa-arrow-left"></i> Back to list
+  <% end %>
+</div>
 
-<% if user_signed_in? %>
-  <div style="text-align: center;">
-  <%= link_to "Book", new_garden_booking_path(@garden), class: "btn btn-primary", id: "booking-button" %>
-  </div>
-<% end %>
+
 </div>
