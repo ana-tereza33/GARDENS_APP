@@ -3,8 +3,10 @@
   position: relative;
   overflow: hidden;
   background: white;
+  // background-color: rgb(153, 204, 102);
   box-shadow: 0 0 15px #00000033;
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .card-garden-img {
@@ -45,4 +47,8 @@
   padding: 5px 10px;
   border-radius: 50%;
   display: inline-block;
+}
+
+body {
+  background-color: rgb(225, 246, 202);
 }
