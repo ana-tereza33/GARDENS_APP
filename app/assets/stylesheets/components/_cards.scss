@@ -1,4 +1,3 @@
-
 .card-garden {
   position: relative;
   overflow: hidden;
@@ -14,35 +13,42 @@
 }
 
 .card-garden h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 14px;
+  // font-family: 'Pacifico', cursive;
+  font-size: 19px;
   font-weight: bold;
-  margin: 5px 0 5px;
-  color: #333;
+  margin: 0 0 5px;
+  color: #006400;
+}
+
+.card-garden-content {
+  margin-top: 1px;
+  margin-bottom: 10px;
 }
 
 .card-garden-details {
-  position: absolute;
-  bottom: 10px;
-  left: 10px; /* Moved details to bottom left */
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-garden-details p {
   margin: 0;
 }
 
-.card-garden-details p:last-child {
-  margin-top: 5px;
-}
-
-.card-garden-details p strong {
+.card-garden-details .address {
+  font-size: 15px;
   color: #333;
 }
 
-.card-garden-details p:last-child strong {
-  color: #28a745 !important;
-  background-color: #28a745;
-  padding: 5px 10px;
-  border-radius: 50%;
-  display: inline-block;
+.card-garden-details .price {
+  font-size: 16px;
+  color: #333;
+}
+
+.btn-add-garden {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #84958e;
+  border: transparent;
+  margin-top: 20px;
 }
