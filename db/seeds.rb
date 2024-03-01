@@ -1,5 +1,6 @@
 require "open-uri"
 
+Booking.destroy_all
 Garden.destroy_all
 User.destroy_all
 
@@ -37,9 +38,8 @@ garden1.sub_photos.attach(io: picture3, filename: "garden1_sub2", content_type: 
 
 garden1.save
 
-garden2 = Garden.new(
-  name: "Vegetable Garden",
-  description: "A garden rich in fresh vegetables. Here, tomatoes, carrots, and much more grow.",
+garden2 = Garden.new(name: "Vegetable Garden",
+  description: "A garden rich in fresh vegetables. Tomatoes, carrots, and much more grow.",
   long_description: "Experience the joy of harvesting your own vegetables in this thriving vegetable garden. From tomatoes to carrots, this garden has it all.",
   user: ana,
   price: 15.00,
