@@ -18,9 +18,7 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     @booking.save
 
-    flash.notice = "You have booked a garden!"
-
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: "You have booked a garden!"
   end
 
   def update

@@ -3,15 +3,13 @@
 
   <%= simple_form_for [@garden, @booking] do |f| %>
     <div>
-    <%= f.label :start_date %>
-    <%= f.text_field :start_date, placeholder:"DD/MM/YYYY" %>
+      <%= f.input :start_date, html5: true, input_html: { style: "width: 180px" } %>
     </div>
 
     <br />
 
     <div>
-    <%= f.label :end_date %>
-    <%= f.text_field :end_date, placeholder:"DD/MM/YYYY" %>
+      <%= f.input :end_date, html5: true, input_html: { style: "width: 180px" } %>
     </div>
 
     <br />
