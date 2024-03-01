@@ -17,7 +17,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "pending"
     @booking.save
-    redirect_to bookings_path
+
+    redirect_to bookings_path, notice: "You have booked a garden!"
   end
 
   def update
