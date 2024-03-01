@@ -1,6 +1,6 @@
-<div class="container">
-  <h1>Gardens</h1>
-  <p>Take a look at our beautiful Schrebergärten</p>
+<div class="container ">
+  <h1>Renting Your Schrebergarten Adventure</h1>
+  <p>Take a look at our beautiful Schrebergärten below:</p>
   <div class="row row-margin">
     <% @gardens.each_slice(2) do |garden_group| %>
       <% garden_group.each do |garden| %>
@@ -10,7 +10,7 @@
               <%= cl_image_tag garden.main_photo.key, alt: "#{garden.name} Image", class: "card-garden-img" %>
             <% end %>
             <div class="card-garden-content">
-              <h2><%= link_to garden.name, garden_path(garden), class: "text-decoration-none text-success" %></h2>
+              <h2><%= link_to garden.name, garden_path(garden), class: "text-decoration-none" %></h2>
               <p class="mb-3"><%= garden.description %></p>
               <div class="card-garden-details">
                 <p class="address"><i class="fas fa-map-marker-alt"></i> <%= garden.address %></p>

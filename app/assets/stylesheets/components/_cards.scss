@@ -2,8 +2,10 @@
   position: relative;
   overflow: hidden;
   background: white;
+  // background-color: rgb(153, 204, 102);
   box-shadow: 0 0 15px #00000033;
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .card-garden-img {
@@ -13,16 +15,20 @@
 }
 
 .card-garden h2 {
-  // font-family: 'Pacifico', cursive;
+  font-family: "Shrikhand-Regular";
   font-size: 19px;
   font-weight: bold;
   margin: 0 0 5px;
-  color: #006400;
+  // color: #006400;
+  color: rgb(55, 84, 56);
 }
 
 .card-garden-content {
   margin-top: 1px;
   margin-bottom: 10px;
+  a {
+    color: #375438 !important;
+  }
 }
 
 .card-garden-details {
@@ -51,4 +57,8 @@
   background: #84958e;
   border: transparent;
   margin-top: 20px;
+}
+
+body {
+  background-color: rgb(225, 246, 202);
 }
