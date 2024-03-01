@@ -2,6 +2,7 @@ class Garden < ApplicationRecord
   belongs_to :user
   has_one_attached :main_photo
   has_many_attached :sub_photos
+  has_many :bookings, dependent: :destroy
 
   validates :name, presence: true
   validates :description, presence: true
