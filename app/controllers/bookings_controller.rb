@@ -17,6 +17,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "pending"
     @booking.save
+
+    flash.notice = "You have booked a garden!"
+
     redirect_to bookings_path
   end
 
